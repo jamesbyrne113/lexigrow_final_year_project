@@ -23,6 +23,8 @@ from the project root directiory run the following command from terminal
 python3 data_preparation/reddit_data.py reddit_client_secret reddit_client_id reddit_user_agent 
 ```
 
+### Argument Information
+```
 positional arguments:
   reddit_client_secret  Reddit API client secret
   reddit_client_id      User Agent for reddit API
@@ -38,4 +40,5 @@ optional arguments:
   --word_num WORD_NUM   minimum number of words per subreddit
   --max_comments MAX_COMMENTS
                         maximum number of comments per subreddit post
+```
 
