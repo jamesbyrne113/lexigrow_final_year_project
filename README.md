@@ -1,6 +1,6 @@
 # LexiGrow - Final Year Project
-James byrne
-Supervisor: Julie Berndsen
+Author James byrne  
+Supervisor: Julie Berndsen 
 
 ## Folders
 * data - contains data used and created at various steps
@@ -57,7 +57,7 @@ optional arguments:
 ```
 
 ## Reddit Main Data Processing 
-This processing steps achieve the common steps for the Word Difficuly Classifier and the Context2Vec Model. It also performs the additional steps for the Word Difficuly Classifier.
+This processing steps achieve the common steps for the Word Difficuly Classifier and the Context2Vec Model. It also performs the additional steps for the Word Difficuly Classifier. It outputs the sentences at each preprocessing stage to a json file for each subreddit.
 
 [data preprocessing file](data_preparation/data_preprocessing.py)
 
@@ -89,7 +89,7 @@ optional arguments:
 ```
                         
 ## CEFR
-This file converts the cefr levels to CEFR minimum levels for each word outlined in the report.
+This file converts the cefr levels to CEFR minimum levels for each word outlined in the report, it outputs the results in a new file.
 
 [cefr file](data_preparation/cefr.py)
 
@@ -115,7 +115,7 @@ optional arguments:
 ```
 
 ## Twinword Data
-This script collects data from twinword API to evaluate the performance of the word difficulty model.
+This script collects data from twinword API to evaluate the performance of the word difficulty model. It creates two files, one with the twinword scores for the words in the Oxford 5000 data set and another with words not in that data set.
 
 [twinword file](data_preparation/twinword.py)
 
@@ -150,3 +150,33 @@ optional arguments:
   --cefr_path CEFR_PATH
                         path to cefr min file
 ```
+
+## Twinword Data
+This script takes as input the output from the word difficulty preprocessing and creates a text file consisting of the reddit sentences and wordnet defintions and example phrases with a sentence per line.
+
+[context2vec_preprocessing file](data_preparation/context2vec_data_cleaning.py)
+
+### Requirements
+* output from [preprocessed file](data_preparation/data_preprocessing.py)
+
+### Run
+From the project root directiory run the following command from terminal. Replace twinword_api_key with the key.
+```
+python3 data_preparation/context2vec_data_cleaning.py
+```
+
+### Argument Information
+```
+usage: context2vec_data_cleaning.py [-h]
+                                    [--reddit_preprocessed_path REDDIT_PREPROCESSED_PATH]
+                                    [--save_path SAVE_PATH]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --reddit_preprocessed_path REDDIT_PREPROCESSED_PATH
+                        Path to folder containing preprocessed files (the
+                        output from data_preparation/data_preprocessing.py)
+  --save_path SAVE_PATH
+                        Path to text file to output processed sentences
+```
+
