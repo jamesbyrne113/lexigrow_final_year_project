@@ -1,6 +1,7 @@
 # LexiGrow - Final Year Project
 Author James byrne  
-Supervisor: Julie Berndsen 
+Supervisor: Julie Berndsen
+[LexiGrow](csi6220-3-vm3.ucd.ie]
 
 ## Folders
 * data - contains data used and created at various steps
@@ -8,6 +9,9 @@ Supervisor: Julie Berndsen
 * data_preparation - contains various python scripts for data preparation
 * models - contain any models used
 * word_difficulty_classifier - contains jupyter notebooks and python scripts that evaluate a range of different classifiers on different data sets, creates the best classifier and evaluates that classifier on the Twinword Data set
+* Context2Vec - containes altered [scripts from the original author](https://github.com/orenmel/context2vec)
+
+---
 
 ## Requirements
 * Python 3.7.3
@@ -17,8 +21,31 @@ Supervisor: Julie Berndsen
 ```
 pip install -r requirements.txt
 ```
+* For the LexiGrow Web App, an additional requirements.txt file is in the website directiory and must be installed
 * To run data collection script a Reddit API access is required and further information can be found on https://www.reddit.com/wiki/api#wiki_reddit_api_access
 * To obtain collect twinword data, a Twinword API key is necessary and can be obtained from https://www.twinword.com/api/language-scoring.php
+
+---
+
+## LexiGrow Web App
+This contains the LexiGrow web app made using django and react. To run locally follow the Run steps below.
+
+#### Requirements
+* Install additional requirements.txt file found in website directory.
+* Ensure that the word2vec path on line [website/lexigrow/components/word2vec.py](website/lexigrow/components/word2vec.py) points to the Google News Word2Vec Model.
+* Ensure that the context2vec path on line [website/lexigrow/components/context2vec/context2vec.py](website/lexigrow/components/context2vec/context2vec.py) points to the UkWac Context2Vec pre-trained model mentioned above.
+
+#### Run 
+Steps to run LexiGrow locally
+
+From within the website folder execute the following command
+```
+python3 manage.py runserver
+```
+
+#### Add Similar Words based on meaning by Word2Vec
+1. In the [website/lexigrow/components/word2vec.py](website/lexigrow/components/word2vec.py) uncomment the 5th line
+2. In the [website/frontend/src/components/TabsMain.js](website/frontend/src/components/TabsMain.js) uncomment the 143rd to the 145th line
 
 ---
 
