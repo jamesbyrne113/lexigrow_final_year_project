@@ -7,7 +7,7 @@ Supervisor: Julie Berndsen
 * data_collection - contains python scripts related to collecting the data
 * data_preparation - contains various python scripts for data preparation
 * models - contain any models used
-* word_difficulty_classifier - contains jupyter notebooks and python scripts that evaluate a range of different classifiers on different data sets
+* word_difficulty_classifier - contains jupyter notebooks and python scripts that evaluate a range of different classifiers on different data sets, creates the best classifier and evaluates that classifier on the Twinword Data set
 
 ## Requirements
 * Python 3.7.3
