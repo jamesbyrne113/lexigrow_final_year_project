@@ -2,7 +2,7 @@
 ![](logo.png)  
 Author James Byrne  
 Supervisor: Julie Berndsen  
-[LexiGrow Web App](http://csi6220-3-vm3.ucd.ie)
+[LexiGrow Web App](http://csi6220-3-vm3.ucd.ie=50x)
 
 ## Folders
 * data - contains data used and created at various steps
