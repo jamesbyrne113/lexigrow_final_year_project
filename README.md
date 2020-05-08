@@ -1,7 +1,8 @@
-# LexiGrow - Final Year Project
+# Final Year Project
+![](logo.png)
 Author James byrne  
-Supervisor: Julie Berndsen
-[LexiGrow](csi6220-3-vm3.ucd.ie]
+Supervisor: Julie Berndsen  
+[LexiGrow Web App](http://csi6220-3-vm3.ucd.ie)
 
 ## Folders
 * data - contains data used and created at various steps
