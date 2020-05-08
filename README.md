@@ -1,5 +1,5 @@
 # Final Year Project
-![](logo.png)
+![](logo.png)  
 Author James byrne  
 Supervisor: Julie Berndsen  
 [LexiGrow Web App](http://csi6220-3-vm3.ucd.ie)
