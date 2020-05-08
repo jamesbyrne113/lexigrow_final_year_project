@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous"
+  />
+  {% block extra_header %}{% endblock extra_header %}
+  <title>LexiGrow</title>
+</head>
+
+{% block body %}
+
+  <body style="height: 100%; width: 100%;">
+      <div id="app" style="height: 100%; width: 100%;">
+          <!-- React will load here -->
+      </div>
+  </body>
+{% endblock body %}
+
+{% load static %}
+{% block extra_js %}{% endblock extra_js %}
+
+<script src="{% static "frontend/main.js" %}"></script>
+</html>

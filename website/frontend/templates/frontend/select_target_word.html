@@ -1,0 +1,14 @@
+{% extends '../base.html' %}
+
+{% block extra_js %}
+
+    <script>
+        window.pageName = "select_target_word";
+        window.context = {{ page_context|safe }};
+        window.context["selectTargetWordURL"] = "{% url 'select_target_word' %}";
+        window.context["phraseInfoURL"] = "{% url 'phrase_info' %}";
+        window.context["logoutURL"] = "{% url 'logout' %}";
+        window.context["updateUserOptionsURL"] = "{% url 'update-user-options' %}";
+    </script>
+
+{% endblock extra_js %}
