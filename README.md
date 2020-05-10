@@ -51,6 +51,9 @@ python3 manage.py runserver
 1. In the [website/lexigrow/components/word2vec.py](website/lexigrow/components/word2vec.py) uncomment the 5th line
 2. In the [website/frontend/src/components/TabsMain.js](website/frontend/src/components/TabsMain.js) uncomment the 143rd to the 145th line
 
+#### Additional Notes
+Postgresql was used in the production version of LexiGrow, for ease of portability, sqlite is used in this repository.
+
 ---
 
 ## Data Collection and Preparation
