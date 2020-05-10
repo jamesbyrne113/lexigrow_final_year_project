@@ -20,7 +20,7 @@ export default function EnterPhrase(props) {
 				<Col>
 					<InputGroup onKeyPress={e => keyPressed(e)}>
 			 			<FormControl
-							placeholder="Enter new phrase..."
+							placeholder="Enter a phrase..."
 							value={newPhrase}
 							onChange={e => setNewPhrase(e.target.value)}
 						/>

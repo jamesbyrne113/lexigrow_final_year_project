@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Row, Toast } from 'react-bootstrap';
+import { Alert, Row, Toast } from 'react-bootstrap';
 import Container from './Container';
 import EnterPhrase from "./EnterPhrase";
 import { TargetPhraseWordLinks } from "./PhraseWordLinks";
@@ -84,6 +84,14 @@ export default function PhraseInfo(props) {
 				<EnterPhrase selectTargetWordURL={selectTargetWordURL}/>
 			</Row>
 			<SeenWordsToasts seenWords={seenWords} />
+			<Alert
+                style={{
+                    textAlign: "center",
+                }}
+                variant="light"
+            >
+                Highlight any text on the page to hear it
+            </Alert>
 		</Container>
 	)
 };

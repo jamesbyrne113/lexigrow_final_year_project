@@ -21,20 +21,18 @@ export default function SelectTargetWord(props) {
 		<Container updateUserOptionsURL={updateUserOptionsURL} logoutURL={logoutURL} userFullName={userFullName} userLevel={userLevel} >
             <div style={{"minHeight": "100%", "minHeight": "100vh", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
                 <PhraseWordLinks hasTargetLinks={hasTargetLinks} phraseInfoURL={phraseInfoURL} phrase={phrase} phraseWords={phrase.split(" ")} startIndex={0} />
-                {/* <TargetPhraseWordLinks hasTargetLinks={hasTargetLinks} phraseInfoURL={phraseInfoURL} phrase={phrase} phraseWords={phrase.split(" ")} startIndex={0} /> */}
+
+                <Alert
+                    style={{
+                        textAlign: "center",
+                    }}
+                    variant="light"
+                >
+                    Select a word above for more information or enter in a different phrase
+                </Alert>
+
                 <EnterPhrase selectTargetWordURL={selectTargetWordURL} />
             </div>
-
-            <Alert
-                style={{
-                    bottom: 0,
-                    marginTop: "-100px",
-                    textAlign: "center",
-                }}
-                variant="light"
-            >
-                Select a word above for more information about that word
-            </Alert>
 		</Container>
 	)
 };

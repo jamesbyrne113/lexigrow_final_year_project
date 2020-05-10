@@ -72,8 +72,12 @@ def get_similar_meaning_wordnet(phrase, target_index, target_word_infos, max_lev
 def get_same_sound(word, max_level=6):
 	same_sound_words = same_sound_generator.same_sound_words(word)
 
+	unique_words = set()
 	words_info = []
 	for word_info in dictionary.get_words_info_gen(same_sound_words):
-		if word_info["word"] != word and cefr_to_num.get(word_info["level"], 0) <= max_level:
+		if word_info["word"] != word and word_info["word"] not in unique_words and cefr_to_num.get(word_info["level"], 0) <= max_level:
 			words_info.append(word_info)
-	return words_info
+			unique_words.add(word_info["word"])
+		if len(words_info) >= 10:
+			break
+	return list(words_info)

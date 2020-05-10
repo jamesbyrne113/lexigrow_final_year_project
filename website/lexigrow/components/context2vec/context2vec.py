@@ -19,7 +19,7 @@ class Context2Vec:
     index2word = model_reader.index2word
     model = model_reader.model
 
-    def similar_words(self, context, target_index, max_words=30, include_similarity=False):
+    def similar_words(self, context, target_index, max_words=20, include_similarity=False):
         context_v = self.get_context_vector(context, target_index)
 
         similarity = (self.w.dot(context_v) + 1.0) / 2  # Cosine similarity can be negative, mapping similarity to [0,1]
