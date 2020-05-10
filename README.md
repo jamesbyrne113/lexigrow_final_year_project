@@ -12,6 +12,7 @@ Supervisor: Julie Berndsen
 * models - contain any models used
 * word_difficulty_classifier - contains jupyter notebooks and python scripts that evaluate a range of different classifiers on different data sets, creates the best classifier and evaluates that classifier on the Twinword Data set
 * Context2Vec - containes altered [scripts from the original author](https://github.com/orenmel/context2vec)
+* website contains the django and react web app
 
 ---
 
@@ -34,8 +35,9 @@ This contains the LexiGrow web app made using django and react. To run locally f
 
 #### Requirements
 * Install additional requirements.txt file found in website directory.
-* Ensure that the word2vec path on line [website/lexigrow/components/word2vec.py](website/lexigrow/components/word2vec.py) points to the Google News Word2Vec Model.
-* Ensure that the context2vec path on line [website/lexigrow/components/context2vec/context2vec.py](website/lexigrow/components/context2vec/context2vec.py) points to the UkWac Context2Vec pre-trained model mentioned above.
+* Ensure that the word2vec path on line 5 in [website/lexigrow/components/word2vec.py](website/lexigrow/components/word2vec.py) points to the Google News Word2Vec Model.
+* Ensure that the context2vec path on line 13 in [website/lexigrow/components/context2vec/context2vec.py](website/lexigrow/components/context2vec/context2vec.py) points to the UkWac Context2Vec pre-trained model mentioned above.
+* Ensure that the word difficulty classifier path on line 30 in [website/lexigrow/components/word_dfficulty_classifier_wrapper.py](website/lexigrow/components/word_dfficulty_classifier_wrapper.py) points to the word difficulty classifier
 
 #### Run 
 Steps to run LexiGrow locally
@@ -48,6 +50,9 @@ python3 manage.py runserver
 #### Add Similar Words based on meaning by Word2Vec
 1. In the [website/lexigrow/components/word2vec.py](website/lexigrow/components/word2vec.py) uncomment the 5th line
 2. In the [website/frontend/src/components/TabsMain.js](website/frontend/src/components/TabsMain.js) uncomment the 143rd to the 145th line
+
+#### Additional Notes
+Postgresql was used in the production version of LexiGrow, for ease of portability, sqlite is used in this repository.
 
 ---
 
