@@ -2,6 +2,7 @@ import React from "react";
 import { Alert } from 'react-bootstrap';
 import EnterPhrase from "./EnterPhrase";
 import { PhraseWordLinks } from "./PhraseWordLinks";
+import { TargetPhraseWordLinks } from "./PhraseWordLinks";
 import Container from './Container';
 
 export default function SelectTargetWord(props) {
@@ -20,6 +21,7 @@ export default function SelectTargetWord(props) {
 		<Container updateUserOptionsURL={updateUserOptionsURL} logoutURL={logoutURL} userFullName={userFullName} userLevel={userLevel} >
             <div style={{"minHeight": "100%", "minHeight": "100vh", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
                 <PhraseWordLinks hasTargetLinks={hasTargetLinks} phraseInfoURL={phraseInfoURL} phrase={phrase} phraseWords={phrase.split(" ")} startIndex={0} />
+                {/* <TargetPhraseWordLinks hasTargetLinks={hasTargetLinks} phraseInfoURL={phraseInfoURL} phrase={phrase} phraseWords={phrase.split(" ")} startIndex={0} /> */}
                 <EnterPhrase selectTargetWordURL={selectTargetWordURL} />
             </div>
 

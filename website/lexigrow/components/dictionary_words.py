@@ -65,7 +65,7 @@ def similar_dictionary_word(similar_words, phrase, target_index, target_word_inf
                 sorted_details = context2vec.sorted_similar_contexts(target_index, phrase, word_info)
                 word_info["details"] = [sorted_details[0]]
             words_info.append(word_info)
-        if len(words_info) > max_word_num:
+        if len(words_info) >= max_word_num:
             break
 
     return words_info

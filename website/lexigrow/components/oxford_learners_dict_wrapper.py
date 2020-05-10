@@ -37,6 +37,9 @@ class OxfordLearnersDictWrapper:
 				if word_info is not None:
 					words_info.extend(word_info)
 
+		while len(words_info) > 0:
+			yield words_info.pop(0)
+
 
 	def get_words_info_model(self, word):
 		words_info_query = WordInfo.objects.filter(word=word)

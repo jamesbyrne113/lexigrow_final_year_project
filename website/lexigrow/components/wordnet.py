@@ -56,10 +56,13 @@ class WordNet:
         for synset in synsets:
             definition = synset.definition()
             words_info["details"].append({
+                "lemmas": list(synset.lemma_names()),
                 "definition": definition,
                 "examples": synset.examples(),
             })
             definiton_synsets[definition] = synset
+
+
         sorted_details = self.context2vec.sorted_similar_contexts(target_index, phrase, words_info)
 
         selected_synset = definiton_synsets[sorted_details[0]["definition"]]

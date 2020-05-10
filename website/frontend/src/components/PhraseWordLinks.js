@@ -2,22 +2,35 @@ import React from "react";
 import { Button, Container } from 'react-bootstrap';
 
 export function PhraseWordLinks(props) {
-    const { phraseInfoURL, phrase, phraseWords, startIndex } = props;
+    const { phraseInfoURL, phrase, phraseWords, startIndex, hasTargetLinks } = props;
     
     return (
         <div>
             {phraseWords.map((word, index) => {
-                return (
-                    <Button 
-                        href={phraseInfoURL + "?phrase=" + phrase + "&targetIndex=" + (startIndex + index)}
-                        size="lg"
-                        key={index} 
-                        className='ml-1 mr-1 mb-4'
-                        variant="info"
-                    > 
-                        {word}
-                    </Button>
-                );
+                if (hasTargetLinks[index]) {
+                    return (
+                        <Button 
+                            href={phraseInfoURL + "?phrase=" + phrase + "&targetIndex=" + (startIndex + index)}
+                            size="lg"
+                            key={index} 
+                            className='ml-1 mr-1 mb-4'
+                            variant="primary"
+                        > 
+                            {word}
+                        </Button>
+                    );
+                } else {
+                    return (
+                        <Button 
+                            variant=""
+                            size="lg"
+                            key={index} 
+                            className='ml-1 mr-1 mb-4'
+                        >
+                            {word}
+                        </Button>
+                    );
+                }
             })}
         </div>
     )
@@ -45,10 +58,10 @@ export function TargetPhraseWordLinks(props) {
                     );
                 } else {
                     return (
-                        <Button 
+                        <Button
                             variant={(index == targetIndex) ? "primary" : ""}
                             size="lg"
-                            key={index} 
+                            key={index}
                             className='ml-1 mr-1 mb-2 mt-2'
                         >
                             {word}
