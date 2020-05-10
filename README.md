@@ -27,6 +27,8 @@ pip install -r requirements.txt
 * For the LexiGrow Web App, an additional requirements.txt file is in the website directiory and must be installed
 * To run data collection script a Reddit API access is required and further information can be found on https://www.reddit.com/wiki/api#wiki_reddit_api_access
 * To obtain collect twinword data, a Twinword API key is necessary and can be obtained from https://www.twinword.com/api/language-scoring.php
+* Ensure that yarn is installed for the website
+* Install all packages in yarn in the website/frontend section
 
 ---
 
@@ -38,6 +40,8 @@ This contains the LexiGrow web app made using django and react. To run locally f
 * Ensure that the word2vec path on line 5 in [website/lexigrow/components/word2vec.py](website/lexigrow/components/word2vec.py) points to the Google News Word2Vec Model.
 * Ensure that the context2vec path on line 13 in [website/lexigrow/components/context2vec/context2vec.py](website/lexigrow/components/context2vec/context2vec.py) points to the UkWac Context2Vec pre-trained model mentioned above.
 * Ensure that the word difficulty classifier path on line 30 in [website/lexigrow/components/word_dfficulty_classifier_wrapper.py](website/lexigrow/components/word_dfficulty_classifier_wrapper.py) points to the word difficulty classifier
+* Ensure that yarn is installed for the website
+* Install all packages in yarn in the website/frontend section
 
 #### Run 
 Steps to run LexiGrow locally
