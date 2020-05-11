@@ -46,8 +46,9 @@ This contains the LexiGrow web app made using django and react. To run locally f
 #### Run 
 Steps to run LexiGrow locally
 
-From within the website folder execute the following command
+From within the website folder execute the following commands
 ```
+python3 manage.py collectstatic
 python3 manage.py runserver
 ```
 
